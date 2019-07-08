@@ -1,0 +1,11 @@
+framework module BillCalFramework {
+  umbrella header "BillCalFramework.h"
+
+  export *
+  module * { export * }
+}
+
+module BillCalFramework.Swift {
+    header "BillCalFramework-Swift.h"
+    requires objc
+}
