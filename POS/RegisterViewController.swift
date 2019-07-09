@@ -75,6 +75,7 @@ class RegisterViewController: UIViewController {
         billCalculation.enableTax(forTax: "Tax 1 (5%)")
         billCalculation.enableTax(forTax: "Tax 2 (8%)")
         billCalculation.enableTax(forTax: "Alcohol Tax (10%)")
+        
     }
     
     private func reCalculation() {
@@ -86,6 +87,7 @@ class RegisterViewController: UIViewController {
     }
  
     deinit {
+        
         billCalculation.removeAllDiscounts()
         billCalculation.removeAllTax()
         billCalculation.removeAllItems()
