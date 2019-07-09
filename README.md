@@ -1,6 +1,7 @@
 # BillCalFinal
 
 This project includes the bill calculation framework.
+   (https://github.com/mmrobert/BillCalculation)
 
 1. Assume discount applied before tax,
 2. Discount is applied based on its priority, the largest priority is applied first,
@@ -12,4 +13,4 @@ This project includes the bill calculation framework.
 7. You could apply multiple tax to an item, by specifying the categories or not, but not both,
 8. After you change the discount priority, enable and disable discount and tax, and toggle the item's tax exampt, 
    you have to call the method "getBillResult()" of the engine, to update the bill result,
-9. The bill caculation is unit tested for almost all cases.
+9. The taxviewmodel is tested by using Quick/Nimble framework.
