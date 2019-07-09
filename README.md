@@ -1,6 +1,6 @@
 # BillCalFinal
 
-This project includes the bill calculation framework.
+This project (interview-starter) includes the bill calculation framework.
    (https://github.com/mmrobert/BillCalculation)
 
 1. Assume discount applied before tax,
