@@ -18,7 +18,7 @@ class TaxViewModelSpec: QuickSpec {
     let taxViewModel = TaxViewModel()
     
     override func spec() {
-        describe("Tax view model testing.") {
+        describe("Tax view model testing") {
             
             beforeEach {
                 for i in 0..<taxes.count {
@@ -26,41 +26,32 @@ class TaxViewModelSpec: QuickSpec {
                 }
             }
             
-            context("Section title - only 1 section") {
-                it("should return section title string") {
+            context("for tax table loading.") {
+                it("Return section title string:") {
                     expect(self.taxViewModel.title(for: 0)).to(equal("Taxes"))
                 }
-            }
-            
-            context("Number of sections - only 1 section") {
-                it("should return 1") {
+                it("Return number of sections - only 1 section:") {
                     expect(self.taxViewModel.numberOfSections()).to(equal(1))
                 }
-            }
-            
-            context("Number of rows in section - only 1 section") {
-                it("should return total numbers of taxes specified") {
-                    expect(self.taxViewModel.numberOfRows(in: 0)).to(equal(3))
+                it("Return number of taxes:") {
+                    expect(self.taxViewModel.numberOfRows(in: 0)).to(equal(taxes.count))
                 }
-            }
-            
-            context("Tax label") {
-                it("should return label string for a tax") {
+                it("Return label string for a tax:") {
                     let indexP = IndexPath(row: 1, section: 0)
                     expect(self.taxViewModel.labelForTax(at: indexP)).to(equal("Tax 2 (8%)"))
                 }
             }
             
-            context("Toggling tax to check or uncheck") {
+            context("for toggling tax to check or uncheck it.") {
                 let indexP = IndexPath(row: 1, section: 0)
-                it("Initial condition, which is checked") {
+                it("Initial condition, which is checked:") {
                     expect(self.taxViewModel.accessoryType(at: indexP)).to(equal(.checkmark))
                 }
-                it("Become unchecked when toggled one time") {
+                it("Become unchecked when toggled one time:") {
                     self.taxViewModel.toggleTax(at: indexP)
                     expect(self.taxViewModel.accessoryType(at: indexP).rawValue).to(equal(0))
                 }
-                it("Become checked when toggled two times") {
+                it("Become checked when toggled two times:") {
                     self.taxViewModel.toggleTax(at: indexP)
                     self.taxViewModel.toggleTax(at: indexP)
                     expect(self.taxViewModel.accessoryType(at: indexP)).to(equal(.checkmark))
